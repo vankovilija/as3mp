@@ -5,6 +5,7 @@ ActionScript 3.0 Message Processor allows you to process messages into native Ac
 This library is not concerned with JSON or other parsing, once you have the string data parsed to a ActionScript generic object this library makes sure that the object is parsed to its propper ActionScript type, and passed to a propper processor.
 
 Example of use:
+
       ...
       var controller:MessageController = new MessageController();
       

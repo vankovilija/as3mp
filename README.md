@@ -28,3 +28,6 @@ UserMessageProcessor.as:
               //process the message as any native AS3 type with full intellisense
           }
       }
+
+
+Don't forget to add the KnownMetaData.dtd for intellij idea setup, add it from Settings -> Schemas and DTDs, in the URI field type: "urn:Flex:Meta" and browse to the file.

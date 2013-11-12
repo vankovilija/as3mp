@@ -2,7 +2,8 @@
  * BaseRangeItemMessage
  * @author Ilija Vankov
  */
-package com.messageProcessor.controllerTest.testMessageTypes {
+package testMessageTypes {
+
 public class BaseRangeItemMessage extends BaseInventoryItemMessage {
     public var range:Number;
 }

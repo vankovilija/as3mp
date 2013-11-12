@@ -2,7 +2,8 @@
  * UserMessage
  * @author Ilija Vankov
  */
-package com.messageProcessor.controllerTest.testMessageTypes {
+package testMessageTypes {
+
 public class UserMessage extends BaseMessage {
     public var user:UserDataMessage;
     public var friends:Vector.<FriendDataMessage>;

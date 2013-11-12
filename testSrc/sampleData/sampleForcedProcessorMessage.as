@@ -1,11 +1,10 @@
 /**
- * sampleCommandProcessorMessage
+ * sampleForcedProcessorMessage
  * @author Ilija Vankov
  */
-package com.messageProcessor.controllerTest {
+package sampleData {
 
-public const sampleCommandProcessorMessage:Object = {
-    cmd: "UPDATE_USER_DATA",
+public const sampleForcedProcessorMessage:Object = {
     status_code: 200,
     message_id: 1,
     user: {

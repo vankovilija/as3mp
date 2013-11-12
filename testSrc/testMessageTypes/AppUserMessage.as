@@ -2,7 +2,7 @@
  * AppUserMessage
  * @author Ilija Vankov
  */
-package com.messageProcessor.controllerTest.testMessageTypes {
+package testMessageTypes {
 public class AppUserMessage extends FriendDataMessage {
     public var score:Number;
 }

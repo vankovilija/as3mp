@@ -13,7 +13,7 @@ import flash.utils.getQualifiedClassName;
 
 
 /**
- * Base class for message processors, extend from this class every time you need a message processor,
+ * Base class for message testProcessors, extend from this class every time you need a message processor,
  * this class should not be instantiated or used on its own, it should be always used from within the
  * message controller.
  * <b>Usage:</b><br>
@@ -96,6 +96,10 @@ public class MessageProcessor {
                 _processFunction = this[node.@name];
                 break;
             }
+        }
+
+        if(!Boolean(_processFunction)){
+            throw new Error("Message processors must have a process function, make sure you added the MessageHandler metadata tag to your process function!");
         }
     }
 

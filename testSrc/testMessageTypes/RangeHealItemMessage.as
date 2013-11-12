@@ -2,7 +2,7 @@
  * RangeHealItemMessage
  * @author Ilija Vankov
  */
-package com.messageProcessor.controllerTest.testMessageTypes {
+package testMessageTypes {
 public class RangeHealItemMessage extends BaseRangeItemMessage {
     public var healAmount:Number;
 }

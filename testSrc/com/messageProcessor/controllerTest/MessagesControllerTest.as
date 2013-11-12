@@ -4,16 +4,19 @@
  */
 package com.messageProcessor.controllerTest {
 import com.messageProcessor.*;
-import com.messageProcessor.controllerTest.processors.TestFriendDataMessageProcessor;
-import com.messageProcessor.controllerTest.processors.TestInventoryItemsDataMessageProcessor;
-import com.messageProcessor.controllerTest.processors.TestUserDataMessageProcessor;
-import com.messageProcessor.controllerTest.processors.TestUserForcedMessageProcessor;
-import com.messageProcessor.controllerTest.testMessageTypes.AppUserMessage;
-import com.messageProcessor.controllerTest.testMessageTypes.AttackItemMessage;
-import com.messageProcessor.controllerTest.testMessageTypes.DefenceItemMessage;
-import com.messageProcessor.controllerTest.testMessageTypes.HealItemMessage;
-import com.messageProcessor.controllerTest.testMessageTypes.RangeAttackItemMessage;
-import com.messageProcessor.controllerTest.testMessageTypes.RangeHealItemMessage;
+import testProcessors.TestFriendDataMessageProcessor;
+import testProcessors.TestInventoryItemsDataMessageProcessor;
+import testProcessors.TestUserDataMessageProcessor;
+import testProcessors.TestUserForcedMessageProcessor;
+import testMessageTypes.AppUserMessage;
+import testMessageTypes.AttackItemMessage;
+import testMessageTypes.DefenceItemMessage;
+import testMessageTypes.HealItemMessage;
+import testMessageTypes.RangeAttackItemMessage;
+import testMessageTypes.RangeHealItemMessage;
+
+import sampleData.sampleCommandProcessorMessage;
+import sampleData.sampleForcedProcessorMessage;
 
 public class MessagesControllerTest {
 
@@ -37,7 +40,7 @@ public class MessagesControllerTest {
         _controller.registerDataType(DefenceItemMessage);
     }
 
-    [Test( description="This tests adding of processors", order=2 )]
+    [Test( description="This tests adding of testProcessors", order=2 )]
     public function testAddProcessor():void {
         _controller.addProcessor(TestUserForcedMessageProcessor);
         _controller.addProcessor(TestUserDataMessageProcessor);
@@ -47,8 +50,8 @@ public class MessagesControllerTest {
 
     [Test( description="This tests processing of actual ambiguous objects to native types", order=3 )]
     public function testProcessObject():void {
-        _controller.processObject(sampleForcedProcessorMessage, TestUserForcedMessageProcessor);
-        _controller.processObject(sampleCommandProcessorMessage);
+        _controller.processMessage(sampleForcedProcessorMessage, TestUserForcedMessageProcessor);
+        _controller.processMessage(sampleCommandProcessorMessage);
     }
 
     [AfterClass]

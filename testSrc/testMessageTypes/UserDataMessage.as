@@ -2,7 +2,7 @@
  * UserDataMessage
  * @author Ilija Vankov
  */
-package com.messageProcessor.controllerTest.testMessageTypes {
+package testMessageTypes {
 import com.messageProcessor.SerializableData;
 import com.messageProcessor.SerializableDate;
 

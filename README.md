@@ -10,7 +10,7 @@ Example of use:
       var controller:MessageController = new MessageController();
       
       controller.addProcessor(UserMessageProcessor);
-      ... //add more processors
+      ... //add more testProcessors
       
       controller.processObject(serverMessage);
       ...

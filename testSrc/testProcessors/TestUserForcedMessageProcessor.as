@@ -2,18 +2,18 @@
  * TestUserForcedMessageProcessor
  * @author Ilija Vankov
  */
-package com.messageProcessor.controllerTest.processors {
+package testProcessors {
 import com.messageProcessor.controllerTest.*;
 import com.messageProcessor.*;
-import com.messageProcessor.controllerTest.testMessageTypes.AppUserMessage;
-import com.messageProcessor.controllerTest.testMessageTypes.AttackItemMessage;
-import com.messageProcessor.controllerTest.testMessageTypes.DefenceItemMessage;
-import com.messageProcessor.controllerTest.testMessageTypes.HealItemMessage;
-import com.messageProcessor.controllerTest.testMessageTypes.RangeAttackItemMessage;
-import com.messageProcessor.controllerTest.testMessageTypes.RangeHealItemMessage;
-import com.messageProcessor.controllerTest.testMessageTypes.UserMessage;
+import testMessageTypes.AppUserMessage;
+import testMessageTypes.AttackItemMessage;
+import testMessageTypes.DefenceItemMessage;
+import testMessageTypes.HealItemMessage;
+import testMessageTypes.RangeAttackItemMessage;
+import testMessageTypes.RangeHealItemMessage;
+import testMessageTypes.UserMessage;
 import com.messageProcessor.serializers.DateFormatSerializer;
-import com.messageProcessor.controllerTest.sampleForcedProcessorMessage;
+import sampleData.sampleForcedProcessorMessage;
 
 import org.flexunit.asserts.assertEquals;
 

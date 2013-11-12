@@ -2,7 +2,7 @@
  * BaseInventoryItemMessage
  * @author Ilija Vankov
  */
-package com.messageProcessor.controllerTest.testMessageTypes {
+package testMessageTypes {
 import com.messageProcessor.SerializableData;
 
 public class BaseInventoryItemMessage extends SerializableData {

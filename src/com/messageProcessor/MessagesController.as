@@ -104,22 +104,27 @@ public class MessagesController {
         }
     }
 
+    public function getProcessorInstance(processorClass:Class):*
+    {
+        return _processorClassMap[getQualifiedClassName(processorClass)];
+    }
+
     public function registerDataType(type:Class):void
     {
         ObjectSerializer.getForType(type);
     }
 
-    public function processObject(object:Object, forceProcessor:* = null):void
+    public function processMessage(message:Object, forceProcessor:* = null):void
     {
         var processor:MessageProcessor;
 
-        var rootObject:Object = findRoot(_root, object, object);
+        var rootObject:Object = findRoot(_root, message, message);
 
         if(forceProcessor){
             if(forceProcessor is MessageProcessor)
                 processor = forceProcessor;
             else if(forceProcessor is Class){
-                processor = _processorClassMap[getQualifiedClassName(forceProcessor)]
+                processor = _processorClassMap[getQualifiedClassName(forceProcessor)];
             }
 
             if(!rootObject){
@@ -131,14 +136,14 @@ public class MessagesController {
             }
         }else{
             var l1:int = _checkFields.length;
-            var processObject:Object = ObjectUtil.copy(object);
+            var processObject:Object = ObjectUtil.copy(message);
             var newRoot:Object;
             var checkValue:String;
             var checkField:String;
             var l:int;
             while(--l1 > -1){
                 checkField = this._checkFields[l1];
-                if(object.hasOwnProperty(checkField) && _processorsMap[checkField].hasOwnProperty(processObject[checkField])){
+                if(message.hasOwnProperty(checkField) && _processorsMap[checkField].hasOwnProperty(processObject[checkField])){
                     checkValue = processObject[checkField];
                     delete processObject[checkField];
 
@@ -164,7 +169,7 @@ public class MessagesController {
                         }
                     }
 
-                    processObject = ObjectUtil.copy(object)
+                    processObject = ObjectUtil.copy(message)
                 }
             }
         }

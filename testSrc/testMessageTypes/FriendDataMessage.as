@@ -2,7 +2,8 @@
  * FriendDataMessage
  * @author Ilija Vankov
  */
-package com.messageProcessor.controllerTest.testMessageTypes {
+package testMessageTypes {
+
 public class FriendDataMessage extends UserDataMessage {
     public var isAppUser:Boolean;
 }

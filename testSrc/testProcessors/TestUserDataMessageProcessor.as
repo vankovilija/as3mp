@@ -2,13 +2,15 @@
  * TestUserDataMessageProcessor
  * @author Ilija Vankov
  */
-package com.messageProcessor.controllerTest.processors {
+package testProcessors {
 import com.messageProcessor.controllerTest.*;
 import com.messageProcessor.*;
-import com.messageProcessor.controllerTest.testMessageTypes.UserDataMessage;
+import testMessageTypes.UserDataMessage;
 import com.messageProcessor.serializers.DateFormatSerializer;
 
 import org.flexunit.asserts.assertEquals;
+
+import sampleData.sampleCommandProcessorMessage;
 
 public class TestUserDataMessageProcessor extends MessageProcessor {
     public function TestUserDataMessageProcessor() {

@@ -2,12 +2,14 @@
  * TestInventoryItemsDataMessageProcessor
  * @author Ilija Vankov
  */
-package com.messageProcessor.controllerTest.processors {
+package testProcessors {
 import com.messageProcessor.controllerTest.*;
 import com.messageProcessor.*;
-import com.messageProcessor.controllerTest.testMessageTypes.BaseInventoryItemMessage;
+import testMessageTypes.BaseInventoryItemMessage;
 
 import org.flexunit.asserts.assertEquals;
+
+import sampleData.sampleCommandProcessorMessage;
 
 public class TestInventoryItemsDataMessageProcessor extends MessageProcessor {
     public function TestInventoryItemsDataMessageProcessor() {

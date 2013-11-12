@@ -4,6 +4,8 @@ ActionScript 3.0 Message Processor
 ActionScript 3.0 Message Processor allows you to process messages into native ActionScript types that you can define, you can use metadata tags to define how each property will be parsed, use fields or properties for the custom message types.
 This library is not concerned with JSON or other parsing, once you have the string data parsed to a ActionScript generic object this library makes sure that the object is parsed to its propper ActionScript type, and passed to a propper processor.
 
+Additionally as3mp will parse to the most logical registered child class when assigning a value to a base type (parent) type with multiple children.
+
 Example of use:
 
       ...

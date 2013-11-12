@@ -2,8 +2,8 @@
  * MessagesControllerTest
  * @author Ilija Vankov
  */
-package com.messageProcessor.controllerTest {
-import com.messageProcessor.*;
+package com.as3mp.controllerTest {
+import com.as3mp.*;
 import testProcessors.TestFriendDataMessageProcessor;
 import testProcessors.TestInventoryItemsDataMessageProcessor;
 import testProcessors.TestUserDataMessageProcessor;

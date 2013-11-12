@@ -2,12 +2,12 @@
  * SerializableDate
  * @author Ilija Vankov
  */
-package com.messageProcessor {
+package com.as3mp {
 
-import com.messageProcessor.protocol.ISerializable;
-import com.messageProcessor.protocol.ISerializer;
-import com.messageProcessor.serializers.DateFormatSerializer;
-import com.messageProcessor.serializers.DateTimestampSerializer;
+import com.as3mp.protocol.ISerializable;
+import com.as3mp.protocol.ISerializer;
+import com.as3mp.serializers.DateFormatSerializer;
+import com.as3mp.serializers.DateTimestampSerializer;
 
 /**
  * Helper class for dates that allows you to easily serialize/deserialize dates

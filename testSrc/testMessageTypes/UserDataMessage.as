@@ -3,8 +3,8 @@
  * @author Ilija Vankov
  */
 package testMessageTypes {
-import com.messageProcessor.SerializableData;
-import com.messageProcessor.SerializableDate;
+import com.as3mp.SerializableData;
+import com.as3mp.SerializableDate;
 
 public class UserDataMessage extends SerializableData {
     public var facebook_id:Number;

@@ -3,8 +3,8 @@
  * @author Ilija Vankov
  */
 package testProcessors {
-import com.messageProcessor.controllerTest.*;
-import com.messageProcessor.*;
+import com.as3mp.controllerTest.*;
+import com.as3mp.*;
 import testMessageTypes.BaseInventoryItemMessage;
 
 import org.flexunit.asserts.assertEquals;

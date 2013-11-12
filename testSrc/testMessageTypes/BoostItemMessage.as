@@ -3,7 +3,7 @@
  * @author Ilija Vankov
  */
 package testMessageTypes {
-import com.messageProcessor.controllerTest.testMessageTypes.*;
+import com.as3mp.controllerTest.testMessageTypes.*;
 
 public class BoostItemMessage extends BaseInventoryItemMessage {
     public var alterProperty:String;

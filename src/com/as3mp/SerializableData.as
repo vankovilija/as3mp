@@ -2,11 +2,11 @@
  * SerializableData
  * @author Ilija Vankov
  */
-package com.messageProcessor {
+package com.as3mp {
 
-import com.messageProcessor.protocol.ISerializable;
-import com.messageProcessor.protocol.ISerializer;
-import com.messageProcessor.serializers.ObjectSerializer;
+import com.as3mp.protocol.ISerializable;
+import com.as3mp.protocol.ISerializer;
+import com.as3mp.serializers.ObjectSerializer;
 
 /**
  * JSON message objects should extend from SerializableData but they don't have to,

@@ -2,11 +2,11 @@
  * MessageProcessor
  * @author Ilija Vankov
  */
-package com.messageProcessor {
+package com.as3mp {
 
-import com.messageProcessor.protocol.ISerializer;
-import com.messageProcessor.serializers.ObjectSerializer;
-import com.messageProcessor.serializers.ObjectSerializer;
+import com.as3mp.protocol.ISerializer;
+import com.as3mp.serializers.ObjectSerializer;
+import com.as3mp.serializers.ObjectSerializer;
 
 import flash.utils.describeType;
 import flash.utils.getQualifiedClassName;
@@ -19,7 +19,7 @@ import flash.utils.getQualifiedClassName;
  * <b>Usage:</b><br>
  *     <listing>
  *         package com.messageProcessors {
- *               import com.messageProcessor.MessageProcessor;
+ *               import com.as3mp.MessageProcessor;
  *               import com.FacebookUser;
  *               import com.FriendDataMessage;
  *

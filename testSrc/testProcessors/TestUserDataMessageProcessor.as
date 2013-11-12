@@ -3,10 +3,10 @@
  * @author Ilija Vankov
  */
 package testProcessors {
-import com.messageProcessor.controllerTest.*;
-import com.messageProcessor.*;
+import com.as3mp.controllerTest.*;
+import com.as3mp.*;
 import testMessageTypes.UserDataMessage;
-import com.messageProcessor.serializers.DateFormatSerializer;
+import com.as3mp.serializers.DateFormatSerializer;
 
 import org.flexunit.asserts.assertEquals;
 

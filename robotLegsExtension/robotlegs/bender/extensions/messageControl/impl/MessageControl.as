@@ -3,8 +3,8 @@
  * @author Ilija Vankov
  */
 package robotlegs.bender.extensions.messageControl.impl {
-import com.messageProcessor.MessageProcessor;
-import com.messageProcessor.MessagesController;
+import com.as3mp.MessageProcessor;
+import com.as3mp.MessagesController;
 
 import robotlegs.bender.extensions.messageControl.api.IMessageControl;
 import robotlegs.bender.extensions.messageControl.api.ITypeRegister;

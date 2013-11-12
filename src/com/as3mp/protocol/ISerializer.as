@@ -2,7 +2,7 @@
  * ISerializer
  * @author Ilija Vankov
  */
-package com.messageProcessor.protocol {
+package com.as3mp.protocol {
 public interface ISerializer {
     function deSerializeMessage(message:Object, returnObject:* = null):*;
     function serialize(object:*):Object;

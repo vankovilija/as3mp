@@ -2,9 +2,9 @@
  * VectorSerializer
  * @author Ilija Vankov
  */
-package com.messageProcessor.serializers {
+package com.as3mp.serializers {
 
-import com.messageProcessor.protocol.ISerializer;
+import com.as3mp.protocol.ISerializer;
 
 import flash.utils.getDefinitionByName;
 

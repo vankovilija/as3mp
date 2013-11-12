@@ -2,14 +2,14 @@
  * MessagesController
  * @author Ilija Vankov
  */
-package com.messageProcessor {
+package com.as3mp {
 
-import com.messageProcessor.serializers.BooleanSerializer;
-import com.messageProcessor.serializers.DateFormatSerializer;
-import com.messageProcessor.serializers.DateTimestampSerializer;
-import com.messageProcessor.serializers.ObjectSerializer;
-import com.messageProcessor.serializers.VectorSerializer;
-import com.messageProcessor.utils.ObjectUtil;
+import com.as3mp.serializers.BooleanSerializer;
+import com.as3mp.serializers.DateFormatSerializer;
+import com.as3mp.serializers.DateTimestampSerializer;
+import com.as3mp.serializers.ObjectSerializer;
+import com.as3mp.serializers.VectorSerializer;
+import com.as3mp.utils.ObjectUtil;
 
 import flash.utils.getQualifiedClassName;
 

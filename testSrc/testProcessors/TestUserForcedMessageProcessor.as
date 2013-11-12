@@ -3,8 +3,8 @@
  * @author Ilija Vankov
  */
 package testProcessors {
-import com.messageProcessor.controllerTest.*;
-import com.messageProcessor.*;
+import com.as3mp.controllerTest.*;
+import com.as3mp.*;
 import testMessageTypes.AppUserMessage;
 import testMessageTypes.AttackItemMessage;
 import testMessageTypes.DefenceItemMessage;
@@ -12,7 +12,7 @@ import testMessageTypes.HealItemMessage;
 import testMessageTypes.RangeAttackItemMessage;
 import testMessageTypes.RangeHealItemMessage;
 import testMessageTypes.UserMessage;
-import com.messageProcessor.serializers.DateFormatSerializer;
+import com.as3mp.serializers.DateFormatSerializer;
 import sampleData.sampleForcedProcessorMessage;
 
 import org.flexunit.asserts.assertEquals;

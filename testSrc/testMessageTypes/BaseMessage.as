@@ -3,7 +3,7 @@
  * @author Ilija Vankov
  */
 package testMessageTypes {
-import com.messageProcessor.SerializableData;
+import com.as3mp.SerializableData;
 
 public class BaseMessage extends SerializableData {
     public var status_code:Number;

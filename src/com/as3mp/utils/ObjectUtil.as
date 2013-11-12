@@ -2,7 +2,7 @@
  * ObjectUtil
  * @author Ilija Vankov
  */
-package com.messageProcessor.utils
+package com.as3mp.utils
 {
 	import flash.utils.getDefinitionByName;
 	import flash.utils.getQualifiedClassName;

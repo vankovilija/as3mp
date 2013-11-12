@@ -2,11 +2,11 @@
  * ObjectSerializer
  * @author Ilija Vankov
  */
-package com.messageProcessor.serializers {
+package com.as3mp.serializers {
 
-import com.messageProcessor.protocol.ISerializable;
-import com.messageProcessor.protocol.ISerializer;
-import com.messageProcessor.utils.ClassHierarchy;
+import com.as3mp.protocol.ISerializable;
+import com.as3mp.protocol.ISerializer;
+import com.as3mp.utils.ClassHierarchy;
 
 import flash.utils.describeType;
 import flash.utils.getDefinitionByName;

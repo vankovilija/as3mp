@@ -3,7 +3,7 @@
  * @author Ilija Vankov
  */
 package testProcessors {
-import com.messageProcessor.*;
+import com.as3mp.*;
 import testMessageTypes.AppUserMessage;
 import testMessageTypes.FriendDataMessage;
 import org.flexunit.asserts.assertTrue;

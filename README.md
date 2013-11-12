@@ -19,8 +19,6 @@ UserMessageProcessor.as:
 
 
       public class UserMessageProcessor extends MessageProcessor {
-          public var friends:Vector.<FacebookUser>;
-
           public function UserMessageProcessor() {
               super(UserDataMessage);
           }

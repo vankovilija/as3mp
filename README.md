@@ -19,8 +19,6 @@ UserMessageProcessor.as:
 
 
       public class UserMessageProcessor extends MessageProcessor {
-          public var friends:Vector.&lt;FacebookUser&gt;;
-
           public function UserMessageProcessor() {
               super(UserDataMessage);
           }
@@ -30,3 +28,19 @@ UserMessageProcessor.as:
               //process the message as any native AS3 type with full intellisense
           }
       }
+      
+UserDataMessage.as:
+   
+      
+      public class UserDataMessage extends SerializableData {
+          public var facebook_id:Number;
+          public var name:String;
+      
+          [MessageBinding(dateFormat="YYYY-MM-dd")]
+          public var dob:Date;
+      }
+
+You don't have to extend messages from SerializableData, but doing so makes them easier to Serialize, both faster for the automatic serialization, and easier for manual serialization as they get the .serialize and .deSerialize methods, as well as an additional clone method, to easily clone the message.
+
+
+Don't forget to add the KnownMetaData.dtd for intellij idea setup, add it from Settings -> Schemas and DTDs, in the URI field type: "urn:Flex:Meta" and browse to the file.

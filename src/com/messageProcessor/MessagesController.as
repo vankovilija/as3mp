@@ -23,7 +23,7 @@ public class MessagesController {
     private var _root:Array;
 
     public function MessagesController(checkField:String = "", root:String = "") {
-        _checkFields = [checkField];
+        _checkFields = [{root: checkField.split("."), field: checkField}];
 
         if(!root || root == "")
             _root = [];
@@ -91,14 +91,11 @@ public class MessagesController {
         }else{
             if(!_processorsMap.hasOwnProperty(processor.checkField)){
                 _processorsMap[processor.checkField] = {};
+                _checkFields.push({root: processor.checkField.split("."), field: processor.checkField});
             }
 
             if(!_processorsMap[processor.checkField].hasOwnProperty(processor.checkFieldValue))
                 _processorsMap[processor.checkField][processor.checkFieldValue] = new Vector.<MessageProcessor>();
-
-            if(_checkFields.indexOf(processor.checkField) == -1){
-                _checkFields.push(processor.checkField);
-            }
 
             _processorsMap[processor.checkField][processor.checkFieldValue].push(processor);
         }
@@ -137,15 +134,29 @@ public class MessagesController {
         }else{
             var l1:int = _checkFields.length;
             var processObject:Object = ObjectUtil.copy(message);
+            var checkMessage:Object;
             var newRoot:Object;
             var checkValue:String;
+            var checkFieldRoot:Array;
             var checkField:String;
             var l:int;
             while(--l1 > -1){
-                checkField = this._checkFields[l1];
-                if(message.hasOwnProperty(checkField) && _processorsMap[checkField].hasOwnProperty(processObject[checkField])){
-                    checkValue = processObject[checkField];
-                    delete processObject[checkField];
+                checkFieldRoot = this._checkFields[l1].root;
+                checkField = this._checkFields[l1].field;
+                checkMessage = processObject;
+                var lCheck:int = checkFieldRoot.length - 1;
+                var iCheck:int;
+                var continueProcess:Boolean = true;
+                for(iCheck = 0; iCheck < lCheck; iCheck++){
+                    if(!checkMessage.hasOwnProperty(checkFieldRoot[iCheck])){
+                        continueProcess = false;
+                        break;
+                    }
+                    checkMessage = checkMessage[checkFieldRoot[iCheck]];
+                }
+                checkValue = checkMessage[checkFieldRoot[lCheck]];
+                if(continueProcess && checkMessage.hasOwnProperty(checkFieldRoot[lCheck]) && _processorsMap[checkField].hasOwnProperty(checkValue)){
+                    delete checkMessage[checkFieldRoot[lCheck]];
 
                     if(_processorsMap[checkField].hasOwnProperty(checkValue)){
 

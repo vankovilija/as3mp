@@ -17,7 +17,7 @@ public class TestUserDataMessageProcessor extends MessageProcessor {
         super(UserDataMessage);
     }
 
-    [MessageHandler(checkField="cmd",checkValue="UPDATE_USER_DATA", messageRoot="user")]
+    [MessageHandler(checkField="user.type",checkValue="UserData", messageRoot="user")]
     public function processUserData(message:UserDataMessage):void
     {
         var ds:DateFormatSerializer = DateFormatSerializer.getByFormat("YYYY-MM-dd");

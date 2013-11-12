@@ -9,6 +9,7 @@ public const sampleCommandProcessorMessage:Object = {
     status_code: 200,
     message_id: 1,
     user: {
+        type: "UserData",
         facebook_id: 1000,
         name: "Jon Doe",
         dob: "1986-02-03"

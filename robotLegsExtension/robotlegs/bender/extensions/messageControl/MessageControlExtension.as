@@ -1,9 +1,7 @@
-//------------------------------------------------------------------------------
-//  Copyright (c) 2009-2013 the original author or authors. All Rights Reserved.
-//
-//  NOTICE: You are permitted to use, modify, and distribute this file
-//  in accordance with the terms of the license agreement accompanying it.
-//------------------------------------------------------------------------------
+/**
+ * MessageControlExtension
+ * @author Ilija Vankov
+ */
 
 package robotlegs.bender.extensions.messageControl
 {
@@ -37,7 +35,6 @@ package robotlegs.bender.extensions.messageControl
 		public function extend(context:IContext):void
 		{
 			context.afterInitializing(afterInitializing)
-				.beforeDestroying(beforeDestroying)
 				.whenDestroying(whenDestroying);
 			_injector = context.injector;
 			_injector.map(IMessageControl).toSingleton(MessageControl);
@@ -51,16 +48,6 @@ package robotlegs.bender.extensions.messageControl
 		{
 			_messageControl = _injector.getInstance(IMessageControl);
 			_injector.injectInto(_messageControl);
-		}
-
-		private function beforeDestroying():void
-		{
-//			_messageControl.unmediateAll();
-//			if (_injector.satisfiesDirectly(IViewManager))
-//			{
-//				_viewManager = _injector.getInstance(IViewManager);
-//				_viewManager.removeViewHandler(_messageControl);
-//			}
 		}
 
 		private function whenDestroying():void

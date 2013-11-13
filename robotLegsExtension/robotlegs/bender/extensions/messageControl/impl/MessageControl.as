@@ -8,6 +8,7 @@ import com.as3mp.MessagesController;
 
 import robotlegs.bender.extensions.messageControl.api.IMessageControl;
 import robotlegs.bender.extensions.messageControl.api.ITypeRegister;
+import robotlegs.bender.framework.api.IContext;
 import robotlegs.bender.framework.api.IInjector;
 
 public class MessageControl implements IMessageControl{
@@ -17,6 +18,9 @@ public class MessageControl implements IMessageControl{
 
     [Inject]
     public var injector:IInjector;
+
+    [Inject]
+    public var context:IContext;
 
     public function MessageControl() {
         _messagesController = new MessagesController();
@@ -34,8 +38,15 @@ public class MessageControl implements IMessageControl{
     }
 
     public function mapProcessor(processorClass:Class):ITypeRegister {
-        _messagesController.addProcessor(processorClass);
-        _processors.push(_messagesController.getProcessorInstance(processorClass));
+        var processor:MessageProcessor = _messagesController.addProcessor(processorClass);
+
+        if(_processors.indexOf(processor) == -1)
+            _processors.push(processor);
+
+        if(context && context.initialized){
+            injector.injectInto(processor);
+        }
+
         return this;
     }
 

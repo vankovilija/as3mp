@@ -11,7 +11,11 @@ import robotlegs.bender.extensions.messageControl.api.IMessageControl;
 import robotlegs.bender.framework.api.LifecycleEvent;
 import robotlegs.bender.framework.impl.Context;
 
+import sampleData.sampleCommandProcessorMessage;
+
 import sampleData.sampleForcedProcessorMessage;
+
+import testProcessors.TestFriendDataInjectedMessageProcessor;
 
 import testProcessors.TestUserForcedInjectedMessageProcessor;
 
@@ -43,7 +47,10 @@ public class MessageControlExtensionTest {
     }
 
     private function startTest(event:LifecycleEvent = null, passThroughData:Object = null ):void {
-        IMessageControl(_context.injector.getInstance(IMessageControl)).processMessage(sampleForcedProcessorMessage, TestUserForcedInjectedMessageProcessor);
+        var mc:IMessageControl = IMessageControl(_context.injector.getInstance(IMessageControl));
+        mc.processMessage(sampleForcedProcessorMessage, TestUserForcedInjectedMessageProcessor);
+        mc.mapProcessor(TestFriendDataInjectedMessageProcessor);
+        mc.processMessage(sampleCommandProcessorMessage);
     }
 
     [After]

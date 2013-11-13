@@ -37,12 +37,12 @@ public class MessagesController {
         _processorsMap[_checkFields] = {};
     }
 
-    public function addProcessor(processorClass:Class):void
+    public function addProcessor(processorClass:Class):MessageProcessor
     {
         var cn:String = getQualifiedClassName(processorClass);
 
         if(_processorClassMap.hasOwnProperty(cn))
-            return;
+            return _processors[cn];
 
         var processor:MessageProcessor;
 
@@ -99,6 +99,8 @@ public class MessagesController {
 
             _processorsMap[processor.checkField][processor.checkFieldValue].push(processor);
         }
+
+        return processor;
     }
 
     public function getProcessorInstance(processorClass:Class):*

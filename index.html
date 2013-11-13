@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>As3mp by vankovilija</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>As3mp</h1>
+        <p>Process server messages, or files, into native objects, cascade the objects down to the most logical class to use for a given message.</p>
+
+        <p class="view"><a href="https://github.com/vankovilija/as3mp">View the Project on GitHub <small>vankovilija/as3mp</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/vankovilija/as3mp/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/vankovilija/as3mp/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/vankovilija/as3mp">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <p>Hey guys, I have been looking for a while on the web for a library that will serialize messages down to native objects that can be used with intellisense, and after a lot of looking around I decided to build my own.
+The library includes a RobotLegs extension that you can install and use out of the box, the extension simplifies the setup process.
+This library is far from complete, please report any bugs you might find, but this is the first version, any support is greatly welcome!</p>
+
+<p><strong>Features</strong></p>
+
+<ul>
+<li>cascading down to child types of a parent message type to determine the wright choice based on the properties provided in the message.</li>
+<li>serialization of dates from either a given format, or a timestamp, dates currently only support number formatting and no timezones, altho this is planed for near future.</li>
+<li>Vector type serialization, the library can serialize Arrays directly to Vectors of a given type, it will also cascade down to the proper child if the Vector type is a base class that has children, for example: items:Vector.</li>
+<li>serialization of Boolean either as string "true"/"false", number or other</li>
+<li>processing of the messages in separate message processors to better separate the logic of processing the message.</li>
+<li>checkField / checkValue matching for a given message to any given message processor, by adding the check field and check value in the metadata tags of the MessageHandler function you can link this processor to a message, this is useful for sockets, for example if the socket sends a message like so {cmd:"UpdateFriends", data:{...}}, you could define the message handler as such [MessageHandler(checkField="cmd", checkValue="UpdateFriends", messageRoot="data")] this will link this MessageHandler to that message. When calling process on your controller, you can have multiple processors linked to a same message, each processor can have a different checkField to match against in the same message, and checkFields don't have to be at the root of the message. For example you can have a checkField like so: "user.type" meaning that the type field will be checked inside the user object against the checkValue.</li>
+<li>the messageRoot option allows you to define what field inside the message object will have the proper form to be processed by the given message processor into the given message type, this allows you to easily send the same data update in multiple messages with the same root, for example you could have a field called user that you send on every API request in different messages, to update the user stats, and user contains a check field cmd that you can reference against to extract the user object from all the messages easily.</li>
+<li>SerializableData type, this is a type that contains serialize, and deSerialize methods, as well as a convenience method of clone, you can use this type to serialize or deserialize your data manually without using the AS3MP setup for message processors, also even if you are using the AS3MP standard way of processing messages, it is recommended that your message classes extend from the SerializableData type as it will improve the parsing speed slightly.</li>
+<li>RobotLegs extension, featuring full support for dependency injection into message processors, enabling ease of use in message processors with all of your injected objects.</li>
+</ul><p>NOTE: in order to cascade down to child types, you must register the child types in the messagecontroller or in messagecontrol if you are using the robotlegs extension.</p>
+
+<p>In a nutshell this library will help improve your organization for processing server messages, I have used it in a large scale commercial project the past year, with no performance loss problems.</p>
+
+<p>Enjoy!</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/vankovilija">vankovilija</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>

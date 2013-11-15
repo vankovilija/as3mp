@@ -103,7 +103,21 @@ public class ClassHierarchy
 
         if(!classHolder) return;
 
-        classHolder.forAllChildren(callback);
+        var que:Vector.<ClassHolder>;
+        var newQue:Vector.<ClassHolder> = classHolder.children.slice();
+        var child:ClassHolder;
+        var l:int;
+        while((l = newQue.length) > 0){
+            que = newQue.slice();
+            newQue.length = 0;
+            while(--l > -1){
+                child = que.pop();
+                if(callback.apply(null, [child.c]) === false) return;
+
+                if(child.children.length > 0)
+                    newQue = newQue.concat(child.children);
+            }
+        }
     }
 }
 }
